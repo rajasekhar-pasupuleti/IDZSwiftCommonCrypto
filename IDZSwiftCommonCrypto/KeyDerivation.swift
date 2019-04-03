@@ -75,7 +75,7 @@ open class PBKDF
         if(status != Int32(kCCSuccess))
         {
             print("ERROR: CCKeyDerivationPBDK failed with stats \(status).")
-            fatalError("ERROR: CCKeyDerivationPBDK failed.")
+            //fatalError("ERROR: CCKeyDerivationPBDK failed.")
         }
         return derivedKey
     }
@@ -97,7 +97,7 @@ open class PBKDF
         if(status != Int32(kCCSuccess))
         {
             print("ERROR: CCKeyDerivationPBDK failed with stats \(status).")
-            fatalError("ERROR: CCKeyDerivationPBDK failed.")
+            //fatalError("ERROR: CCKeyDerivationPBDK failed.")
         }
         return derivedKey
     }
@@ -122,7 +122,7 @@ open class PBKDF
         if(status != Int32(kCCSuccess))
         {
             print("ERROR: CCKeyDerivationPBDK failed with stats \(status).")
-            fatalError("ERROR: CCKeyDerivationPBDK failed.")
+            //fatalError("ERROR: CCKeyDerivationPBDK failed.")
         }
     }
 }

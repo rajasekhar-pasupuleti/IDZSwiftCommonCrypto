@@ -20,7 +20,7 @@ func convertHexDigit(c : UnicodeScalar) -> UInt8
         case UnicodeScalar("0")...UnicodeScalar("9"): return UInt8(c.value - UnicodeScalar("0").value)
         case UnicodeScalar("a")...UnicodeScalar("f"): return UInt8(c.value - UnicodeScalar("a").value + UInt32(0xa))
         case UnicodeScalar("A")...UnicodeScalar("F"): return UInt8(c.value - UnicodeScalar("A").value + UInt32(0xa))
-        default: fatalError("convertHexDigit: Invalid hex digit")
+        default : return 0
     }
 }
 
@@ -42,7 +42,7 @@ public func arrayFrom(hexString : String) -> [UInt8]
         }
         else
         {
-            fatalError("arrayFromHexString: String must contain even number of characters")
+            //fatalError("arrayFromHexString: String must contain even number of characters")
         }
     }
     return a

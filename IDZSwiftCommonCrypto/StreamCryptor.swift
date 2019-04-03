@@ -413,7 +413,7 @@ open class StreamCryptor
 		else
 		{
 			NSLog("FATAL_ERROR: CCCryptorCreateWithMode returned unexpected status (\(rawStatus)).")
-			fatalError("CCCryptorCreateWithMode returned unexpected status.")
+//			fatalError("CCCryptorCreateWithMode returned unexpected status.")
 		}
 
 	}
@@ -468,7 +468,7 @@ open class StreamCryptor
             else
             {
                 print("FATAL_ERROR: CCCryptorFinal returned unexpected status (\(rawStatus)).")
-                fatalError("CCCryptorUpdate returned unexpected status.")
+    //            fatalError("CCCryptorUpdate returned unexpected status.")
             }
         }
         return self.status
@@ -498,7 +498,7 @@ open class StreamCryptor
         else
         {
             print("FATAL_ERROR: CCCryptorUpdate returned unexpected status (\(rawStatus)).")
-            fatalError("CCCryptorUpdate returned unexpected status.")
+      //      fatalError("CCCryptorUpdate returned unexpected status.")
         }
         context.deallocate()
     }

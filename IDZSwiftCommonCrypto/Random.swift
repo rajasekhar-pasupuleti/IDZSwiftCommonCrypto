@@ -30,7 +30,8 @@ open class Random
     {
         let statusCode = CCRandomGenerateBytes(bytes, byteCount)
         guard let status = Status(rawValue: statusCode) else {
-            fatalError("CCRandomGenerateBytes returned unexpected status code: \(statusCode)")
+            //fatalError("CCRandomGenerateBytes returned unexpected status code: \(statusCode)")
+            return .rngFailure
         }
         return status
     }
@@ -64,7 +65,7 @@ open class Random
     {
         if(byteCount <= 0)
         {
-            fatalError("generateBytes: byteCount must be positve and non-zero")
+            //fatalError("generateBytes: byteCount must be positve and non-zero")
         }
         var bytes : [UInt8] = Array(repeating: UInt8(0), count: byteCount)
         let status = generateBytes(bytes: &bytes, byteCount: byteCount)
