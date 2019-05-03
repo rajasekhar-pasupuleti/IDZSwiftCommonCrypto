@@ -438,7 +438,7 @@ open class StreamCryptor
             else
             {
                 print("FATAL_ERROR: CCCryptorUpdate returned unexpected status (\(rawStatus)).")
-                fatalError("CCCryptorUpdate returned unexpected status.")
+  //              fatalError("CCCryptorUpdate returned unexpected status.")
             }
         }
         return self.status
