@@ -79,34 +79,37 @@ open class StreamCryptor
 	///
 	/// Enumerates encryption mode
 	///
-	public enum Mode
-	{
-		case ECB
-		case CBC
-		case CFB
-		case CTR
-		case F8	//		= 5, // Unimplemented for now (not included)
-		case LRW//		= 6, // Unimplemented for now (not included)
-		case OFB
-		case XTS
-		case RC4
-		case CFB8
-		
-		func nativeValue() -> CCMode {
-			switch self {
-			case .ECB : return CCMode(kCCModeECB)
-			case .CBC : return CCMode(kCCModeCBC)
-			case .CFB : return CCMode(kCCModeCFB)
-			case .CTR : return CCMode(kCCModeCTR)
-			case .F8 : return CCMode(kCCModeF8)// Unimplemented for now (not included)
-			case .LRW : return CCMode(kCCModeLRW)// Unimplemented for now (not included)
-			case .OFB : return CCMode(kCCModeOFB)
-			case .XTS : return CCMode(kCCModeXTS)
-			case .RC4 : return CCMode(kCCModeRC4)
-			case .CFB8 : return CCMode(kCCModeCFB8)
-			}
-		}
-	}
+    public enum Mode
+    {
+        /// Electronic Code Book
+        case ECB
+        /// Cipher Block Chaining
+        case CBC
+        /// Cipher FeeBack
+        case CFB
+        /// Counter
+        case CTR
+        /// Output FeedBack
+        case OFB
+        /// RC4 streaming
+        case RC4
+        /// Cipher FeebBack with 8-bit shifts
+        case CFB8
+        
+        
+        /// Obtain the native value for a Mode.
+        func nativeValue() -> CCMode {
+            switch self {
+            case .ECB : return CCMode(kCCModeECB)
+            case .CBC : return CCMode(kCCModeCBC)
+            case .CFB : return CCMode(kCCModeCFB)
+            case .CTR : return CCMode(kCCModeCTR)
+            case .OFB : return CCMode(kCCModeOFB)
+            case .RC4 : return CCMode(kCCModeRC4)
+            case .CFB8 : return CCMode(kCCModeCFB8)
+            }
+        }
+    }
 	
 	/**
 	 Enumerated encryption paddings
